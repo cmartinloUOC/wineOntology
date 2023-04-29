@@ -1,0 +1,1464 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology">
+    <Prefix name="" IRI="http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology/"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="wineontology" IRI="http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:authors"/>
+        <Literal>Carlos Martín Lozano</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:rights"/>
+        <Literal>https://creativecommons.org/licenses/by/4.0/</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal>Wine ontology</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#acacia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#aged"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#aging"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#barrel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bestPairing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#bigDistributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cheese"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#chestnut"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dessert"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#distributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fish"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#granReserve"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#grape"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#high"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#highRating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#low"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lowRating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#meat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#medium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mediumDistributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#mediumRating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#oak"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#rating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#red"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#reserve"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#rose"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#semiAged"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#short"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#smallDistributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#sparkling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#temperatureServing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#vegetable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#white"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#wine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#winery"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#agedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#agedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#distributes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDistributedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProducedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#madeFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#pairingWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#produced"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#rated"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#servinAt"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAge"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBody"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCountry"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFoundationYear"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasHighLimit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasIncome"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLowLimit"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMonths"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPrice"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRatingLevel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasReviews"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Distribution_S.L"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hermanos_Cortazo_Bodega_Tradicional"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#High_Quality"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Long"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Win_S.L"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Winner_S.L"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ribeye"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#5-10"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:authors"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:license"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:rights"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:sameAs"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#aging"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasMonths"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#distributor"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasCountry"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#distributor"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasIncome"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#grape"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasName"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#rating"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasRatingLevel"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#rating"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasReviews"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#temperatureServing"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasHighLimit"/>
+            <Datatype abbreviatedIRI="xsd:short"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#temperatureServing"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasLowLimit"/>
+            <Datatype abbreviatedIRI="xsd:short"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#wine"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasAge"/>
+            <Datatype abbreviatedIRI="xsd:short"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#wine"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasBody"/>
+            <Datatype abbreviatedIRI="xsd:short"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#wine"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasPrice"/>
+            <Datatype abbreviatedIRI="xsd:float"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#winery"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasFoundationYear"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataExactCardinality>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#acacia"/>
+        <Class IRI="#barrel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#aged"/>
+        <Class IRI="#aging"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#bigDistributor"/>
+        <Class IRI="#distributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cheese"/>
+        <Class IRI="#bestPairing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#chestnut"/>
+        <Class IRI="#barrel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dessert"/>
+        <Class IRI="#bestPairing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fish"/>
+        <Class IRI="#bestPairing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#granReserve"/>
+        <Class IRI="#aging"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#high"/>
+        <Class IRI="#temperatureServing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#highRating"/>
+        <Class IRI="#rating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#low"/>
+        <Class IRI="#temperatureServing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#lowRating"/>
+        <Class IRI="#rating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#meat"/>
+        <Class IRI="#bestPairing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#medium"/>
+        <Class IRI="#temperatureServing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mediumDistributor"/>
+        <Class IRI="#distributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#mediumRating"/>
+        <Class IRI="#rating"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#oak"/>
+        <Class IRI="#barrel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#red"/>
+        <Class IRI="#wine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#reserve"/>
+        <Class IRI="#aging"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#rose"/>
+        <Class IRI="#wine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#semiAged"/>
+        <Class IRI="#aging"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#short"/>
+        <Class IRI="#aging"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#smallDistributor"/>
+        <Class IRI="#distributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#sparkling"/>
+        <Class IRI="#wine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#vegetable"/>
+        <Class IRI="#bestPairing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#white"/>
+        <Class IRI="#wine"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#red"/>
+        <Class IRI="#rose"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#red"/>
+        <Class IRI="#sparkling"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#red"/>
+        <Class IRI="#white"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#distributor"/>
+        <NamedIndividual IRI="#Distribution_S.L"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#red"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#winery"/>
+        <NamedIndividual IRI="#Hermanos_Cortazo_Bodega_Tradicional"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#acacia"/>
+        <NamedIndividual IRI="#High_Quality"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#aged"/>
+        <NamedIndividual IRI="#Long"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#distributor"/>
+        <NamedIndividual IRI="#Win_S.L"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#distributor"/>
+        <NamedIndividual IRI="#Winner_S.L"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#meat"/>
+        <NamedIndividual IRI="#ribeye"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#low"/>
+        <NamedIndividual IRI="#5-10"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#agedBy"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+        <NamedIndividual IRI="#Long"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#agedIn"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+        <NamedIndividual IRI="#High_Quality"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isProducedBy"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+        <NamedIndividual IRI="#Hermanos_Cortazo_Bodega_Tradicional"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pairingWith"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+        <NamedIndividual IRI="#ribeye"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#servinAt"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+        <NamedIndividual IRI="#5-10"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#produced"/>
+        <NamedIndividual IRI="#Hermanos_Cortazo_Bodega_Tradicional"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#agedBy"/>
+        <NamedIndividual IRI="#Long"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasIncome"/>
+        <NamedIndividual IRI="#Distribution_S.L"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10000000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAge"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBody"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPrice"/>
+        <NamedIndividual IRI="#Gran_Caballero"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">120.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAge"/>
+        <NamedIndividual IRI="#Hermanos_Cortazo_Bodega_Tradicional"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">40</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCountry"/>
+        <NamedIndividual IRI="#Hermanos_Cortazo_Bodega_Tradicional"/>
+        <Literal>España</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasMonths"/>
+        <NamedIndividual IRI="#Long"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">130</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasIncome"/>
+        <NamedIndividual IRI="#Win_S.L"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">20000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasIncome"/>
+        <NamedIndividual IRI="#Winner_S.L"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">100</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPrice"/>
+        <NamedIndividual IRI="#ribeye"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">30.0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasHighLimit"/>
+        <NamedIndividual IRI="#5-10"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">10</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLowLimit"/>
+        <NamedIndividual IRI="#5-10"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">5</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#distributes"/>
+        <ObjectProperty IRI="#isDistributedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isProducedBy"/>
+        <ObjectProperty IRI="#produced"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#agedBy"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#agedIn"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isDistributedBy"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isProducedBy"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#rated"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#servinAt"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#agedBy"/>
+        <Class IRI="#wine"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#agedIn"/>
+        <Class IRI="#wine"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#distributes"/>
+        <Class IRI="#distributor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDistributedBy"/>
+        <Class IRI="#wine"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProducedBy"/>
+        <Class IRI="#wine"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#madeFrom"/>
+        <Class IRI="#wine"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#pairingWith"/>
+        <Class IRI="#wine"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#produced"/>
+        <Class IRI="#winery"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#rated"/>
+        <Class IRI="#wine"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#servinAt"/>
+        <Class IRI="#wine"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#agedBy"/>
+        <Class IRI="#aging"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#agedIn"/>
+        <Class IRI="#barrel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#distributes"/>
+        <Class IRI="#wine"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isDistributedBy"/>
+        <Class IRI="#distributor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProducedBy"/>
+        <Class IRI="#winery"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#madeFrom"/>
+        <Class IRI="#grape"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#pairingWith"/>
+        <Class IRI="#bestPairing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#produced"/>
+        <Class IRI="#wine"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#rated"/>
+        <Class IRI="#rating"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#servinAt"/>
+        <Class IRI="#temperatureServing"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasAge"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasBody"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasCountry"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasHighLimit"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasIncome"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasLowLimit"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasMonths"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasName"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasPrice"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasRatingLevel"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasReviews"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAge"/>
+        <Class IRI="#wine"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasBody"/>
+        <Class IRI="#wine"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCountry"/>
+        <Class IRI="#distributor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFoundationYear"/>
+        <Class IRI="#winery"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasHighLimit"/>
+        <Class IRI="#temperatureServing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasIncome"/>
+        <Class IRI="#distributor"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLowLimit"/>
+        <Class IRI="#temperatureServing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasMonths"/>
+        <Class IRI="#aging"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasName"/>
+        <Class IRI="#grape"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasPrice"/>
+        <Class IRI="#wine"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRatingLevel"/>
+        <Class IRI="#rating"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasReviews"/>
+        <Class IRI="#rating"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAge"/>
+        <DatatypeRestriction>
+            <Datatype abbreviatedIRI="xsd:short"/>
+            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">0</Literal>
+            </FacetRestriction>
+        </DatatypeRestriction>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasBody"/>
+        <DatatypeRestriction>
+            <Datatype abbreviatedIRI="xsd:short"/>
+            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">5</Literal>
+            </FacetRestriction>
+        </DatatypeRestriction>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCountry"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFoundationYear"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasHighLimit"/>
+        <Datatype abbreviatedIRI="xsd:short"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasIncome"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLowLimit"/>
+        <Datatype abbreviatedIRI="xsd:short"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMonths"/>
+        <DatatypeRestriction>
+            <Datatype abbreviatedIRI="xsd:short"/>
+            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#short">0</Literal>
+            </FacetRestriction>
+        </DatatypeRestriction>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasPrice"/>
+        <DatatypeRestriction>
+            <Datatype abbreviatedIRI="xsd:float"/>
+            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.0</Literal>
+            </FacetRestriction>
+        </DatatypeRestriction>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRatingLevel"/>
+        <DatatypeRestriction>
+            <Datatype abbreviatedIRI="xsd:float"/>
+            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">0.0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#maxInclusive">
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">5.0</Literal>
+            </FacetRestriction>
+        </DatatypeRestriction>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasReviews"/>
+        <DatatypeRestriction>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+            <FacetRestriction facet="http://www.w3.org/2001/XMLSchema#minInclusive">
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">0</Literal>
+            </FacetRestriction>
+        </DatatypeRestriction>
+    </DataPropertyRange>
+    <DisjointDataProperties>
+        <DataProperty IRI="#hasAge"/>
+        <DataProperty IRI="#hasMonths"/>
+    </DisjointDataProperties>
+    <DisjointDataProperties>
+        <DataProperty IRI="#hasIncome"/>
+        <DataProperty IRI="#hasPrice"/>
+    </DisjointDataProperties>
+    <DLSafeRule>
+        <Body>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThan">
+                <Variable IRI="urn:swrl:var#income"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">100000</Literal>
+            </BuiltInAtom>
+            <ClassAtom>
+                <Class IRI="#distributor"/>
+                <Variable IRI="urn:swrl:var#d"/>
+            </ClassAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:greaterThan">
+                <Variable IRI="urn:swrl:var#income"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10000</Literal>
+            </BuiltInAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#hasIncome"/>
+                <Variable IRI="urn:swrl:var#d"/>
+                <Variable IRI="urn:swrl:var#income"/>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#mediumDistributor"/>
+                <Variable IRI="urn:swrl:var#d"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <BuiltInAtom abbreviatedIRI="swrlb:greaterThanOrEqual">
+                <Variable IRI="urn:swrl:var#income"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">100000</Literal>
+            </BuiltInAtom>
+            <ClassAtom>
+                <Class IRI="#distributor"/>
+                <Variable IRI="urn:swrl:var#d"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#hasIncome"/>
+                <Variable IRI="urn:swrl:var#d"/>
+                <Variable IRI="urn:swrl:var#income"/>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#bigDistributor"/>
+                <Variable IRI="urn:swrl:var#d"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#distributor"/>
+                <Variable IRI="urn:swrl:var#d"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#hasIncome"/>
+                <Variable IRI="urn:swrl:var#d"/>
+                <Variable IRI="urn:swrl:var#income"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThanOrEqual">
+                <Variable IRI="urn:swrl:var#income"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10000</Literal>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#smallDistributor"/>
+                <Variable IRI="urn:swrl:var#d"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#acacia</IRI>
+        <Literal>Barrel made from acacia wood</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#acacia</IRI>
+        <Literal>Acacia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#aged</IRI>
+        <Literal>Aged</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#agedBy</IRI>
+        <Literal>Method used in the wine mature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#agedBy</IRI>
+        <Literal>agedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#agedIn</IRI>
+        <Literal>Wines matured by a method</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#agedIn</IRI>
+        <Literal>agedIn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#aging</IRI>
+        <Literal>Aging method used on the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#aging</IRI>
+        <Literal>Aging</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#barrel</IRI>
+        <Literal>Barrel used to madurate the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#barrel</IRI>
+        <Literal>Barrel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#bestPairing</IRI>
+        <Literal>Kind of food that best pair with the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#bestPairing</IRI>
+        <Literal>Best pairing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#bigDistributor</IRI>
+        <Literal>Distributors whose income level qualifies them as big distributors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#bigDistributor</IRI>
+        <Literal>Big distributor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cheese</IRI>
+        <Literal>Cheese</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#chestnut</IRI>
+        <Literal>Barrel made from chesnut wood</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#chestnut</IRI>
+        <Literal>Chesnut</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#dessert</IRI>
+        <Literal>Class defining the multiple desserts as best pairing with the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#dessert</IRI>
+        <Literal>Dessert</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#distributes</IRI>
+        <Literal>Distribution elements of a distributor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#distributes</IRI>
+        <Literal>distributes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#distributor</IRI>
+        <Literal>Wine distributors</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#distributor</IRI>
+        <Literal>Distributor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#fish</IRI>
+        <Literal>Class defining the multiple fishes as best pairing with the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#fish</IRI>
+        <Literal>Fish</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#granReserve</IRI>
+        <Literal>Gran-reserve</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#grape</IRI>
+        <Literal>Grape used in the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#grape</IRI>
+        <Literal>Grape</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAge</IRI>
+        <Literal>Number of years from the production of the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasAge</IRI>
+        <Literal>hasAge</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBody</IRI>
+        <Literal>Consistency of the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasBody</IRI>
+        <Literal>hasBody</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCountry</IRI>
+        <Literal>Country of a given distributor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasCountry</IRI>
+        <Literal>hasCountry</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFoundationYear</IRI>
+        <Literal>Year of creation of a member</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasFoundationYear</IRI>
+        <Literal>hasFoundationYear</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasHighLimit</IRI>
+        <Literal>Max temperature limit to serving wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasHighLimit</IRI>
+        <Literal>hasHighLimit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasIncome</IRI>
+        <Literal>Income of the last year of a given distributor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasIncome</IRI>
+        <Literal>The money received on a regular basis from wine production</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasIncome</IRI>
+        <Literal>hasIncome</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLowLimit</IRI>
+        <Literal>Low limit for the serving temperature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasLowLimit</IRI>
+        <Literal>hasLowLimit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMonths</IRI>
+        <Literal>Months for the fermentation of the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasMonths</IRI>
+        <Literal>hasMonths</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasName</IRI>
+        <Literal>Grape variante name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasName</IRI>
+        <Literal>hasName</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasPrice</IRI>
+        <Literal>Cost of a single wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasPrice</IRI>
+        <Literal>hasPrice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRatingLevel</IRI>
+        <Literal>Average rating puntuation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasRatingLevel</IRI>
+        <Literal>hasRatingLevel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasReviews</IRI>
+        <Literal>How many reviews have a single wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasReviews</IRI>
+        <Literal>hasReviews</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#high</IRI>
+        <Literal>High temperature ranges</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#high</IRI>
+        <Literal>High</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#highRating</IRI>
+        <Literal>Ratings considered in the range of high rating.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#highRating</IRI>
+        <Literal>High Rating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isDistributedBy</IRI>
+        <Literal>isDistributedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isProducedBy</IRI>
+        <Literal>isProducedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#low</IRI>
+        <Literal>Low temperature ranges</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#low</IRI>
+        <Literal>Low</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#lowRating</IRI>
+        <Literal>Ratings considered in the range low rating.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lowRating</IRI>
+        <Literal>Low rating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#madeFrom</IRI>
+        <Literal>madeFrom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#meat</IRI>
+        <Literal>Class defining the multiple meats as best pairing with the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#meat</IRI>
+        <Literal>Meat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#medium</IRI>
+        <Literal>Medium temperatures ranges</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#medium</IRI>
+        <Literal>Medium</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#mediumDistributor</IRI>
+        <Literal>Distributors whose income level qualifies them as medium distributors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#mediumDistributor</IRI>
+        <Literal>Medium distributor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#mediumRating</IRI>
+        <Literal>Ratings considered in the range medium rating.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#mediumRating</IRI>
+        <Literal>Medium rating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#oak</IRI>
+        <Literal>Barrel made from oak wood</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#oak</IRI>
+        <Literal>Oak</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#pairingWith</IRI>
+        <Literal>pairingWith</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#produced</IRI>
+        <Literal>produced</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#rated</IRI>
+        <Literal>rated</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#rating</IRI>
+        <Literal>Rated of a wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#rating</IRI>
+        <Literal>Rating</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#red</IRI>
+        <Literal>Wines considered as red wines</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#red</IRI>
+        <Literal>Red</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:sameAs"/>
+        <IRI>#red</IRI>
+        <Literal>https://dbpedia.org/page/Red_wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#reserve</IRI>
+        <Literal>Reserve</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#rose</IRI>
+        <Literal>Wines considered as rose wines</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#rose</IRI>
+        <Literal>Rose</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:sameAs"/>
+        <IRI>#rose</IRI>
+        <Literal>https://dbpedia.org/page/Ros%C3%A9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#semiAged</IRI>
+        <Literal>Semi-aged</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#servinAt</IRI>
+        <Literal>servingAt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#short</IRI>
+        <Literal>Short</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#smallDistributor</IRI>
+        <Literal>Distributors whose income level qualifies them as small distributors.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#smallDistributor</IRI>
+        <Literal>Small distributor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#sparkling</IRI>
+        <Literal>Wines considered as sparkling wines</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#sparkling</IRI>
+        <Literal>Sparkling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#temperatureServing</IRI>
+        <Literal>Optimal temperatue for serving the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#temperatureServing</IRI>
+        <Literal>Temperature optimal serving</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#vegetable</IRI>
+        <Literal>Class defining the multiple vegetables as best pairing with the wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#vegetable</IRI>
+        <Literal>Vegetable</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#white</IRI>
+        <Literal>Wines consideres as with wines</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#white</IRI>
+        <Literal>Red</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:sameAs"/>
+        <IRI>#white</IRI>
+        <Literal>https://dbpedia.org/page/White_wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#wine</IRI>
+        <Literal>Main class of the anthology</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#wine</IRI>
+        <Literal>Wine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#winery</IRI>
+        <Literal>Wine producers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#winery</IRI>
+        <Literal>Winery</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </SubAnnotationPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
