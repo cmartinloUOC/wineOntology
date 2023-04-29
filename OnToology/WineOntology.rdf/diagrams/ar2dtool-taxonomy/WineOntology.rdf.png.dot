@@ -1,0 +1,32 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "wineontology:fish" "wineontology:granReserve" "wineontology:smallDistributor" "wineontology:vegetable" "wineontology:mediumDistributor" "wineontology:wine" "wineontology:meat" "wineontology:lowRating" "wineontology:acacia" "wineontology:reserve" "wineontology:red" "wineontology:aged" "wineontology:highRating" "wineontology:aging" "wineontology:high" "wineontology:low" "wineontology:short" "wineontology:cheese" "wineontology:bigDistributor" "wineontology:distributor" "wineontology:chestnut" "wineontology:rating" "wineontology:barrel" "wineontology:bestPairing" "wineontology:medium" "wineontology:semiAged" "wineontology:white" "wineontology:temperatureServing" "wineontology:sparkling" "wineontology:oak" "wineontology:dessert" "wineontology:mediumRating" "wineontology:rose" ; /*classes style*/
+	"wineontology:bigDistributor" -> "wineontology:distributor" [ label = "rdfs:subClassOf" ];
+	"wineontology:reserve" -> "wineontology:aging" [ label = "rdfs:subClassOf" ];
+	"wineontology:rose" -> "wineontology:wine" [ label = "rdfs:subClassOf" ];
+	"wineontology:high" -> "wineontology:temperatureServing" [ label = "rdfs:subClassOf" ];
+	"wineontology:mediumRating" -> "wineontology:rating" [ label = "rdfs:subClassOf" ];
+	"wineontology:chestnut" -> "wineontology:barrel" [ label = "rdfs:subClassOf" ];
+	"wineontology:white" -> "wineontology:wine" [ label = "rdfs:subClassOf" ];
+	"wineontology:oak" -> "wineontology:barrel" [ label = "rdfs:subClassOf" ];
+	"wineontology:short" -> "wineontology:aging" [ label = "rdfs:subClassOf" ];
+	"wineontology:low" -> "wineontology:temperatureServing" [ label = "rdfs:subClassOf" ];
+	"wineontology:dessert" -> "wineontology:bestPairing" [ label = "rdfs:subClassOf" ];
+	"wineontology:smallDistributor" -> "wineontology:distributor" [ label = "rdfs:subClassOf" ];
+	"wineontology:acacia" -> "wineontology:barrel" [ label = "rdfs:subClassOf" ];
+	"wineontology:aged" -> "wineontology:aging" [ label = "rdfs:subClassOf" ];
+	"wineontology:highRating" -> "wineontology:rating" [ label = "rdfs:subClassOf" ];
+	"wineontology:sparkling" -> "wineontology:wine" [ label = "rdfs:subClassOf" ];
+	"wineontology:granReserve" -> "wineontology:aging" [ label = "rdfs:subClassOf" ];
+	"wineontology:fish" -> "wineontology:bestPairing" [ label = "rdfs:subClassOf" ];
+	"wineontology:red" -> "wineontology:wine" [ label = "rdfs:subClassOf" ];
+	"wineontology:semiAged" -> "wineontology:aging" [ label = "rdfs:subClassOf" ];
+	"wineontology:meat" -> "wineontology:bestPairing" [ label = "rdfs:subClassOf" ];
+	"wineontology:mediumDistributor" -> "wineontology:distributor" [ label = "rdfs:subClassOf" ];
+	"wineontology:medium" -> "wineontology:temperatureServing" [ label = "rdfs:subClassOf" ];
+	"wineontology:lowRating" -> "wineontology:rating" [ label = "rdfs:subClassOf" ];
+	"wineontology:cheese" -> "wineontology:bestPairing" [ label = "rdfs:subClassOf" ];
+	"wineontology:vegetable" -> "wineontology:bestPairing" [ label = "rdfs:subClassOf" ];
+
+}

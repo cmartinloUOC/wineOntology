@@ -1,0 +1,772 @@
+@prefix : <http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#> .
+
+<http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology> rdf:type owl:Ontology ;
+                                                                   <http://purl.org/dc/elements/1.1/authors> "Carlos Martín Lozano" ;
+                                                                   <http://purl.org/dc/elements/1.1/rights> "https://creativecommons.org/licenses/by/4.0/" ;
+                                                                   <http://purl.org/dc/elements/1.1/title> "Wine ontology" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/authors
+<http://purl.org/dc/elements/1.1/authors> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+<http://purl.org/dc/elements/1.1/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf rdfs:comment .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#agedBy
+:agedBy rdf:type owl:ObjectProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :wine ;
+        rdfs:range :aging ;
+        rdfs:comment "Method used in the wine mature" ;
+        rdfs:label "agedBy" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#agedIn
+:agedIn rdf:type owl:ObjectProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :wine ;
+        rdfs:range :barrel ;
+        rdfs:comment "Wines matured by a method" ;
+        rdfs:label "agedIn" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#distributes
+:distributes rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isDistributedBy ;
+             rdfs:domain :distributor ;
+             rdfs:range :wine ;
+             rdfs:comment "Distribution elements of a distributor" ;
+             rdfs:label "distributes" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#isDistributedBy
+:isDistributedBy rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain :wine ;
+                 rdfs:range :distributor ;
+                 rdfs:label "isDistributedBy" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#isProducedBy
+:isProducedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :produced ;
+              rdf:type owl:FunctionalProperty ;
+              rdfs:domain :wine ;
+              rdfs:range :winery ;
+              rdfs:label "isProducedBy" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#madeFrom
+:madeFrom rdf:type owl:ObjectProperty ;
+          rdfs:domain :wine ;
+          rdfs:range :grape ;
+          rdfs:label "madeFrom" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#pairingWith
+:pairingWith rdf:type owl:ObjectProperty ;
+             rdfs:domain :wine ;
+             rdfs:range :bestPairing ;
+             rdfs:label "pairingWith" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#produced
+:produced rdf:type owl:ObjectProperty ;
+          rdfs:domain :winery ;
+          rdfs:range :wine ;
+          rdfs:label "produced" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#rated
+:rated rdf:type owl:ObjectProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :wine ;
+       rdfs:range :rating ;
+       rdfs:label "rated" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#servinAt
+:servinAt rdf:type owl:ObjectProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :wine ;
+          rdfs:range :temperatureServing ;
+          rdfs:label "servingAt" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasAge
+:hasAge rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :wine ;
+        rdfs:range [ rdf:type rdfs:Datatype ;
+                     owl:onDatatype xsd:short ;
+                     owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:short
+                                            ]
+                                          )
+                   ] ;
+        owl:propertyDisjointWith :hasMonths ;
+        rdfs:comment "Number of years from the production of the wine" ;
+        rdfs:label "hasAge" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasBody
+:hasBody rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :wine ;
+         rdfs:range [ rdf:type rdfs:Datatype ;
+                      owl:onDatatype xsd:short ;
+                      owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:short
+                                             ]
+                                             [ xsd:maxInclusive "5"^^xsd:short
+                                             ]
+                                           )
+                    ] ;
+         rdfs:comment "Consistency of the wine" ;
+         rdfs:label "hasBody" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasCountry
+:hasCountry rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :distributor ;
+            rdfs:range xsd:string ;
+            rdfs:comment "Country of a given distributor" ;
+            rdfs:label "hasCountry" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasFoundationYear
+:hasFoundationYear rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :winery ;
+                   rdfs:range xsd:integer ;
+                   rdfs:comment "Year of creation of a member" ;
+                   rdfs:label "hasFoundationYear" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasHighLimit
+:hasHighLimit rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :temperatureServing ;
+              rdfs:range xsd:short ;
+              rdfs:comment "Max temperature limit to serving wine" ;
+              rdfs:label "hasHighLimit" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasIncome
+:hasIncome rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :distributor ;
+           rdfs:range xsd:integer ;
+           owl:propertyDisjointWith :hasPrice ;
+           rdfs:comment "Income of the last year of a given distributor" ,
+                        "The money received on a regular basis from wine production" ;
+           rdfs:label "hasIncome" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasLowLimit
+:hasLowLimit rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :temperatureServing ;
+             rdfs:range xsd:short ;
+             rdfs:comment "Low limit for the serving temperature" ;
+             rdfs:label "hasLowLimit" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasMonths
+:hasMonths rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :aging ;
+           rdfs:range [ rdf:type rdfs:Datatype ;
+                        owl:onDatatype xsd:short ;
+                        owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:short
+                                               ]
+                                             )
+                      ] ;
+           rdfs:comment "Months for the fermentation of the wine" ;
+           rdfs:label "hasMonths" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasName
+:hasName rdf:type owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+         rdfs:domain :grape ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Grape variante name" ;
+         rdfs:label "hasName" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasPrice
+:hasPrice rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :wine ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:onDatatype xsd:float ;
+                       owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
+                                              ]
+                                            )
+                     ] ;
+          rdfs:comment "Cost of a single wine" ;
+          rdfs:label "hasPrice" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasRatingLevel
+:hasRatingLevel rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain :rating ;
+                rdfs:range [ rdf:type rdfs:Datatype ;
+                             owl:onDatatype xsd:float ;
+                             owl:withRestrictions ( [ xsd:minInclusive "0.0"^^xsd:float
+                                                    ]
+                                                    [ xsd:maxInclusive "5.0"^^xsd:float
+                                                    ]
+                                                  )
+                           ] ;
+                rdfs:comment "Average rating puntuation" ;
+                rdfs:label "hasRatingLevel" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasReviews
+:hasReviews rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :rating ;
+            rdfs:range [ rdf:type rdfs:Datatype ;
+                         owl:onDatatype xsd:integer ;
+                         owl:withRestrictions ( [ xsd:minInclusive 0
+                                                ]
+                                              )
+                       ] ;
+            rdfs:comment "How many reviews have a single wine" ;
+            rdfs:label "hasReviews" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#acacia
+:acacia rdf:type owl:Class ;
+        rdfs:subClassOf :barrel ;
+        rdfs:comment "Barrel made from acacia wood" ;
+        rdfs:label "Acacia" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#aged
+:aged rdf:type owl:Class ;
+      rdfs:subClassOf :aging ;
+      rdfs:label "Aged" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#aging
+:aging rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasMonths ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ;
+       rdfs:comment "Aging method used on the wine" ;
+       rdfs:label "Aging" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#barrel
+:barrel rdf:type owl:Class ;
+        rdfs:comment "Barrel used to madurate the wine" ;
+        rdfs:label "Barrel" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#bestPairing
+:bestPairing rdf:type owl:Class ;
+             rdfs:comment "Kind of food that best pair with the wine" ;
+             rdfs:label "Best pairing" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#bigDistributor
+:bigDistributor rdf:type owl:Class ;
+                rdfs:subClassOf :distributor ;
+                rdfs:comment "Distributors whose income level qualifies them as big distributors." ;
+                rdfs:label "Big distributor" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#cheese
+:cheese rdf:type owl:Class ;
+        rdfs:subClassOf :bestPairing ;
+        rdfs:label "Cheese" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#chestnut
+:chestnut rdf:type owl:Class ;
+          rdfs:subClassOf :barrel ;
+          rdfs:comment "Barrel made from chesnut wood" ;
+          rdfs:label "Chesnut" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#dessert
+:dessert rdf:type owl:Class ;
+         rdfs:subClassOf :bestPairing ;
+         rdfs:comment "Class defining the multiple desserts as best pairing with the wine" ;
+         rdfs:label "Dessert" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#distributor
+:distributor rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasCountry ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasIncome ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:integer
+                                 ] ;
+             rdfs:comment "Wine distributors" ;
+             rdfs:label "Distributor" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#fish
+:fish rdf:type owl:Class ;
+      rdfs:subClassOf :bestPairing ;
+      rdfs:comment "Class defining the multiple fishes as best pairing with the wine" ;
+      rdfs:label "Fish" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#granReserve
+:granReserve rdf:type owl:Class ;
+             rdfs:subClassOf :aging ;
+             rdfs:label "Gran-reserve" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#grape
+:grape rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasName ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ;
+       rdfs:comment "Grape used in the wine" ;
+       rdfs:label "Grape" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#high
+:high rdf:type owl:Class ;
+      rdfs:subClassOf :temperatureServing ;
+      rdfs:comment "High temperature ranges" ;
+      rdfs:label "High" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#highRating
+:highRating rdf:type owl:Class ;
+            rdfs:subClassOf :rating ;
+            rdfs:comment "Ratings considered in the range of high rating." ;
+            rdfs:label "High Rating" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#low
+:low rdf:type owl:Class ;
+     rdfs:subClassOf :temperatureServing ;
+     rdfs:comment "Low temperature ranges" ;
+     rdfs:label "Low" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#lowRating
+:lowRating rdf:type owl:Class ;
+           rdfs:subClassOf :rating ;
+           rdfs:comment "Ratings considered in the range low rating." ;
+           rdfs:label "Low rating" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#meat
+:meat rdf:type owl:Class ;
+      rdfs:subClassOf :bestPairing ;
+      rdfs:comment "Class defining the multiple meats as best pairing with the wine" ;
+      rdfs:label "Meat" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#medium
+:medium rdf:type owl:Class ;
+        rdfs:subClassOf :temperatureServing ;
+        rdfs:comment "Medium temperatures ranges" ;
+        rdfs:label "Medium" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#mediumDistributor
+:mediumDistributor rdf:type owl:Class ;
+                   rdfs:subClassOf :distributor ;
+                   rdfs:comment "Distributors whose income level qualifies them as medium distributors." ;
+                   rdfs:label "Medium distributor" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#mediumRating
+:mediumRating rdf:type owl:Class ;
+              rdfs:subClassOf :rating ;
+              rdfs:comment "Ratings considered in the range medium rating." ;
+              rdfs:label "Medium rating" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#oak
+:oak rdf:type owl:Class ;
+     rdfs:subClassOf :barrel ;
+     rdfs:comment "Barrel made from oak wood" ;
+     rdfs:label "Oak" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#rating
+:rating rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasRatingLevel ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:float
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasReviews ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ;
+        rdfs:comment "Rated of a wine" ;
+        rdfs:label "Rating" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#red
+:red rdf:type owl:Class ;
+     rdfs:subClassOf :wine ;
+     owl:disjointWith :rose ,
+                      :sparkling ,
+                      :white ;
+     rdfs:comment "Wines considered as red wines" ;
+     rdfs:label "Red" ;
+     rdfs:sameAs "https://dbpedia.org/page/Red_wine" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#reserve
+:reserve rdf:type owl:Class ;
+         rdfs:subClassOf :aging ;
+         rdfs:label "Reserve" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#rose
+:rose rdf:type owl:Class ;
+      rdfs:subClassOf :wine ;
+      rdfs:comment "Wines considered as rose wines" ;
+      rdfs:label "Rose" ;
+      rdfs:sameAs "https://dbpedia.org/page/Ros%C3%A9" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#semiAged
+:semiAged rdf:type owl:Class ;
+          rdfs:subClassOf :aging ;
+          rdfs:label "Semi-aged" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#short
+:short rdf:type owl:Class ;
+       rdfs:subClassOf :aging ;
+       rdfs:label "Short" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#smallDistributor
+:smallDistributor rdf:type owl:Class ;
+                  rdfs:subClassOf :distributor ;
+                  rdfs:comment "Distributors whose income level qualifies them as small distributors." ;
+                  rdfs:label "Small distributor" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#sparkling
+:sparkling rdf:type owl:Class ;
+           rdfs:subClassOf :wine ;
+           rdfs:comment "Wines considered as sparkling wines" ;
+           rdfs:label "Sparkling" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#temperatureServing
+:temperatureServing rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasHighLimit ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange xsd:short
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasLowLimit ;
+                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onDataRange xsd:short
+                                        ] ;
+                    rdfs:comment "Optimal temperatue for serving the wine" ;
+                    rdfs:label "Temperature optimal serving" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#vegetable
+:vegetable rdf:type owl:Class ;
+           rdfs:subClassOf :bestPairing ;
+           rdfs:comment "Class defining the multiple vegetables as best pairing with the wine" ;
+           rdfs:label "Vegetable" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#white
+:white rdf:type owl:Class ;
+       rdfs:subClassOf :wine ;
+       rdfs:comment "Wines consideres as with wines" ;
+       rdfs:label "Red" ;
+       rdfs:sameAs "https://dbpedia.org/page/White_wine" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#wine
+:wine rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAge ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:short
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasBody ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:short
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPrice ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:float
+                          ] ;
+      rdfs:comment "Main class of the anthology" ;
+      rdfs:label "Wine" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#winery
+:winery rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasFoundationYear ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ;
+        rdfs:comment "Wine producers" ;
+        rdfs:label "Winery" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#Distribution_S.L
+:Distribution_S.L rdf:type owl:NamedIndividual ,
+                           :distributor ;
+                  :hasIncome 10000000 .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#Gran_Caballero
+:Gran_Caballero rdf:type owl:NamedIndividual ,
+                         :red ;
+                :agedBy :Long ;
+                :agedIn :High_Quality ;
+                :isProducedBy :Hermanos_Cortazo_Bodega_Tradicional ;
+                :pairingWith :ribeye ;
+                :servinAt <http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#5-10> ;
+                :hasAge "1"^^xsd:short ;
+                :hasBody "1"^^xsd:short ;
+                :hasPrice "120.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#Hermanos_Cortazo_Bodega_Tradicional
+:Hermanos_Cortazo_Bodega_Tradicional rdf:type owl:NamedIndividual ,
+                                              :winery ;
+                                     :produced :Gran_Caballero ;
+                                     :hasAge 40 ;
+                                     :hasCountry "España" .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#High_Quality
+:High_Quality rdf:type owl:NamedIndividual ,
+                       :acacia .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#Long
+:Long rdf:type owl:NamedIndividual ,
+               :aged ;
+      :agedBy :Gran_Caballero ;
+      :hasMonths 130 .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#Win_S.L
+:Win_S.L rdf:type owl:NamedIndividual ,
+                  :distributor ;
+         :hasIncome 20000 .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#Winner_S.L
+:Winner_S.L rdf:type owl:NamedIndividual ,
+                     :distributor ;
+            :hasIncome 100 .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#ribeye
+:ribeye rdf:type owl:NamedIndividual ,
+                 :meat ;
+        :hasPrice "30.0"^^xsd:float .
+
+
+###  http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#5-10
+<http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#5-10> rdf:type owl:NamedIndividual ,
+                                                                                :low ;
+                                                                       :hasHighLimit "10"^^xsd:short ;
+                                                                       :hasLowLimit "5"^^xsd:short .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#d> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#income> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :distributor ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasIncome ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#income>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#income> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 10000 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :smallDistributor ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                       <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                    rdf:first <urn:swrl:var#income> ;
+                                                                                                    rdf:rest [ rdf:type rdf:List ;
+                                                                                                               rdf:first 100000 ;
+                                                                                                               rdf:rest rdf:nil
+                                                                                                             ]
+                                                                                                  ]
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :distributor ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasIncome ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#income>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :bigDistributor ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                       <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                    rdf:first <urn:swrl:var#income> ;
+                                                                                                    rdf:rest [ rdf:type rdf:List ;
+                                                                                                               rdf:first 100000 ;
+                                                                                                               rdf:rest rdf:nil
+                                                                                                             ]
+                                                                                                  ]
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :distributor ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#income> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 10000 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :hasIncome ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#income>
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :mediumDistributor ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#d>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
