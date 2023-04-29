@@ -1,0 +1,212 @@
+{
+  "@context" : {
+    "low" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#low"
+    },
+    "chestnut" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#chestnut"
+    },
+    "hasPrice" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasPrice"
+    },
+    "distributes" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#distributes",
+      "@type" : "@id"
+    },
+    "rated" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#rated",
+      "@type" : "@id"
+    },
+    "white" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#white"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/elements/1.1/license"
+    },
+    "aged" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#aged"
+    },
+    "madeFrom" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#madeFrom",
+      "@type" : "@id"
+    },
+    "high" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#high"
+    },
+    "wine" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#wine"
+    },
+    "hasName" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasName",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "reserve" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#reserve"
+    },
+    "hasReviews" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasReviews"
+    },
+    "rose" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#rose"
+    },
+    "hasIncome" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasIncome",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "servinAt" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#servinAt",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "authors" : {
+      "@id" : "http://purl.org/dc/elements/1.1/authors"
+    },
+    "mediumDistributor" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#mediumDistributor"
+    },
+    "dessert" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#dessert"
+    },
+    "agedIn" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#agedIn",
+      "@type" : "@id"
+    },
+    "grape" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#grape"
+    },
+    "temperatureServing" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#temperatureServing"
+    },
+    "medium" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#medium"
+    },
+    "hasMonths" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasMonths"
+    },
+    "short" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#short"
+    },
+    "hasAge" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasAge"
+    },
+    "pairingWith" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#pairingWith",
+      "@type" : "@id"
+    },
+    "winery" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#winery"
+    },
+    "meat" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#meat"
+    },
+    "agedBy" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#agedBy",
+      "@type" : "@id"
+    },
+    "barrel" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#barrel"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/elements/1.1/rights"
+    },
+    "hasBody" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasBody"
+    },
+    "produced" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#produced",
+      "@type" : "@id"
+    },
+    "aging" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#aging"
+    },
+    "hasRatingLevel" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasRatingLevel"
+    },
+    "red" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#red"
+    },
+    "cheese" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#cheese"
+    },
+    "hasFoundationYear" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasFoundationYear",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "smallDistributor" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#smallDistributor"
+    },
+    "vegetable" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#vegetable"
+    },
+    "highRating" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#highRating"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/elements/1.1/title"
+    },
+    "isDistributedBy" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#isDistributedBy",
+      "@type" : "@id"
+    },
+    "bestPairing" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#bestPairing"
+    },
+    "distributor" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#distributor"
+    },
+    "acacia" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#acacia"
+    },
+    "bigDistributor" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#bigDistributor"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#sameAs"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "sparkling" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#sparkling"
+    },
+    "isProducedBy" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#isProducedBy",
+      "@type" : "@id"
+    },
+    "rating" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#rating"
+    },
+    "mediumRating" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#mediumRating"
+    },
+    "lowRating" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#lowRating"
+    },
+    "hasLowLimit" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasLowLimit",
+      "@type" : "http://www.w3.org/2001/XMLSchema#short"
+    },
+    "semiAged" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#semiAged"
+    },
+    "granReserve" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#granReserve"
+    },
+    "hasHighLimit" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasHighLimit",
+      "@type" : "http://www.w3.org/2001/XMLSchema#short"
+    },
+    "hasCountry" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#hasCountry",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "fish" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#fish"
+    },
+    "oak" : {
+      "@id" : "http://www.semanticweb.org/carlo/ontologies/2023/3/wineontology#oak"
+    }
+  }
+}
